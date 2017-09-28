@@ -1,0 +1,118 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	width:100%;
+	height:100%;
+	background: #C5BEBE;
+}
+
+header{
+	float: left;
+	background-color: #666;
+	width: 99.4%;
+	padding: 0.3%;
+	border-bottom: 5px solid #33ADFF;
+	padding-left: 5px;
+}
+
+header>span{
+	font-size: 40px;
+	color: white;
+	font-family: 'Verdana';
+	font-weight: 600; 
+}
+
+nav{
+	width: 99.4%;
+	padding: 7px 0.3%;
+	background-color: #ABA252;
+	float: left;
+	border-bottom; 2px solid #F4F0CF;
+}
+
+nav > span{
+	color: white;
+	font-size: 1.5em;
+	margin-left: 5%;
+	font-family: 'Time';
+	cursor: pointer;
+}
+
+.conteiner{
+	float: left;
+	width:99.3%;
+	padding: 0.3%;
+	
+}
+
+#browser_video{
+	width: 95%; 
+	height:80%;
+	border: 3px solid #826262;
+	margin-left:2.5%;	
+}
+
+#goForword {
+	visibility: hidden;
+	width: 0px;
+	height: 0px;
+}
+
+
+
+@media(max-width: 1000px){
+	header{
+		width: 97.3%;
+		height: 50px;
+		
+	}
+	
+	
+header>span{
+	
+	
+	font-size: 21px;
+
+}
+
+nav{
+	width: 0px;
+	height: 0px;
+	visibility: hidden;
+}
+
+nav > span{
+	width: 0px;
+	height: 0px;
+	font-size: 0px;
+	visibility: hidden;
+}
+
+#goForword {
+	padding-left: 20px;
+	background-color: blue;
+	border: 2px solid red;
+	width: 100px;
+	height: 100px;
+	position: relative;
+	bottom: 250px;
+	left: 50px;
+	visibility: visible;
+}
+.conteiner{
+	height: 98%;
+}
+
+#browser_video{
+	height:98%;
+
+}
+
+#videoDiv{
+	height:99%;
+}
+
+}

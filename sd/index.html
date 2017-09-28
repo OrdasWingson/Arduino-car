@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Добавь видео на сервер</title>		
+		<script src="jquery-3.2.1.min.js"></script>		
+	</head>
+	<body>
+		<div class="conteiner">
+			<div class="transporant">Загрузка</div>
+			<div>
+				<form>
+					
+				</form>
+			</div>
+			<div><img id="browser_video" width="700px" height="500px" class="video-image" alt="video"  src="http://192.168.1.40:8080/video"></div>
+			
+			<script type="text/javascript">
+								
+				$(document).ready(function(){
+					$('#flashcb').change(function(){
+						 if ($('#flashcb').is(":checked")) {
+							$(this).load('http://192.168.1.40:8080/enabletorch');
+						  } else {
+							$(this).load('http://192.168.1.40:8080/disabletorch');
+						  }            
+					}) 
+				});
+			</script>        
+			
+             <input id="flashcb" type="checkbox"/> <span class="glyphicon glyphicon-adjust">Включить вспышку</span>
+            
+			 
+		</div>
+	</body>
+</html>
+
