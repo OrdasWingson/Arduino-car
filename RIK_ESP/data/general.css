@@ -1,0 +1,252 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	width:100%;
+	height:100%;
+	background: #C5BEBE;
+}
+
+header{
+	float: left;
+	background-color: #666;
+	width: 99.4%;
+	padding: 0.3%;
+	border-bottom: 5px solid #33ADFF;
+	padding-left: 5px;
+}
+
+header>span{
+	font-size: 40px;
+	color: white;
+	font-family: 'Verdana';
+	font-weight: 600; 
+}
+
+nav{
+	width: 99.4%;
+	padding: 7px 0.3%;
+	background-color: #ABA252;
+	float: left;
+	border-bottom; 2px solid #F4F0CF;
+}
+
+nav div span{
+	float: left;
+	color: white;
+	font-size: 1.5em;
+	margin-left: 5%;
+	font-family: 'Time';
+}
+
+/*контейнер с видео и кнопками*/
+.conteiner{
+	float: left;
+	width:99.3%;
+	padding: 0.3%;
+	
+}
+
+#browser_video{
+	width: 95%; 
+	height:80%;
+	border: 3px solid #826262;
+	margin-left:2.5%;	
+}
+
+	
+.buttonRIK{
+	visibility: hidden;
+	width: 0px;
+	height: 0px;
+}
+
+#lightON{
+	visibility: hidden;
+	width: 0px;
+	height: 0px;
+}
+
+/*кнопка*/
+#agreeIP {
+	float: left;
+	width:180px;
+	height:30px;
+	text-align:center;
+	color:#FFF;
+	text-decoration:none;
+	line-height:30px;
+	font-family:'Oswald', Helvetica;
+	
+}
+
+
+#agreeIP:active {
+	-webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset;
+	top:5px;
+}
+#agreeIP:active:before{
+	top: -11px;
+	bottom: -5px;
+	content: "";
+}
+
+#agreeIP {
+	text-shadow:-1px -1px 0 #A84155;
+	background: #D25068;
+	border:1px solid #D25068;
+	
+	background-image:-webkit-linear-gradient(top, #F66C7B, #D25068);
+	background-image:-moz-linear-gradient(top, #F66C7B, #D25068);
+	background-image:-ms-linear-gradient(top, #F66C7B, #D25068);
+	background-image:-o-linear-gradient(top, #F66C7B, #D25068);
+	background-image:linear-gradient(to bottom, #F66C7B, #D25068);
+	
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	
+	-webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #AD4257, 0 4px 2px rgba(0, 0, 0, .5);
+	-moz-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #AD4257, 0 4px 2px rgba(0, 0, 0, .5);
+	box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #AD4257, 0 4px 2px rgba(0, 0, 0, .5);
+}
+
+#agreeIP:hover {
+	background: #F66C7B;
+	background-image:-webkit-linear-gradient(top, #D25068, #F66C7B);
+	background-image:-moz-linear-gradient(top, #D25068, #F66C7B);
+	background-image:-ms-linear-gradient(top, #D25068, #F66C7B);
+	background-image:-o-linear-gradient(top, #D25068, #F66C7B);
+	background-image:linear-gradient(top, #D25068, #F66C7B);
+}
+
+
+
+
+@media(max-width: 1000px){
+	header{
+		width: 97.3%;
+		height: 50px;
+		
+	}
+	
+	
+header>span{
+	
+	
+	font-size: 21px;
+
+}
+
+nav{
+	width: 0px;
+	height: 0px;
+	visibility: hidden;
+	position: absolute
+}
+
+nav > span{
+	width: 0px;
+	height: 0px;
+	font-size: 0px;
+	visibility: hidden;
+}
+
+
+/*контейнер с видео и кнопками*/
+
+.buttonRIK{
+	visibility: visible;
+	width: 100px;
+	height: 100px;
+	padding-left: 20px;
+	border: 2px solid red;
+	border-radius: 6px;
+	position: absolute;
+}
+
+.buttonRIK>span{
+	position: absolute;
+	left: 45px;
+	top: 20px;
+	font-size: 40px;
+	color: white;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none; 
+}
+
+#goForword {
+		
+	bottom: 150px;
+	left: 50px;
+	
+}
+
+#goBack {
+		
+	bottom: 45px;
+	left: 50px;
+	
+}
+
+#goLeft {
+		
+	bottom: 95px;
+	left: 670px;
+	
+}
+
+#goRight{
+		
+	bottom: 95px;
+	left: 800px;
+	
+}
+
+#lightON {
+	visibility: visible;
+	width: 100px;
+	height: 100px;
+	padding-left: 20px;
+	border: 2px solid red;	
+	position: relative;
+	bottom: 450px;
+	left: 50px;
+	border-radius: 16px;	
+}
+
+#lightON>span{
+	position: absolute;
+	left: 45px;
+	top: 20px;
+	font-size: 40px;
+	color: white;
+}
+
+
+#browser_video{
+	height:98%;
+
+}
+
+#videoDiv{
+	height:99%;
+	position: relative;
+}
+
+}
+
+@media(max-height: 295px){
+	.buttonRIK{
+	visibility: visible;
+	width: 75px;
+	height: 75px;
+	padding-left: 20px;
+	border: 2px solid red;
+	border-radius: 6px;
+	position: absolute;
+}
