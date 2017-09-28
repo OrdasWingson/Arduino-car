@@ -7,22 +7,25 @@ function getAddres(addres)
 }
 
 $(document).ready(function(){
-	var _mode="";
-	var addres = getAddres(location.href);
-	var pos;
+	var _mode; //режим модуля(точка доступа или клиент)
+	var addres = getAddres(location.href); //аддрес страницы
+	var ssid; //имя сети
+	var pass; //пароль
 	
-	
+	//получаем данные конфигурации сервера
 	$.getJSON("http://"+ addres +"/config", function(result){
         $.each(result, function(key, field){
 			
 			if(key == "ssid")
 			{
 				$("input[name='ssid']").val(field);
+				ssid = field;
 			}
 			
 			if(key == "password")
 			{
 				$("input[name='password']").val(field);
+				pass = field;
 			}
 			
 			
@@ -37,6 +40,7 @@ $(document).ready(function(){
 
 	$("#blockAP").css('visibility','hidden').css('position', 'absolute');
 	//обработка события выбора режима
+	
 	$("input[name=dzen]").click(function() {
 		if($("#client").is(":checked"))
 		{
@@ -58,7 +62,7 @@ $(document).ready(function(){
 				location.href = "http://"+ addres +"/index.html";
 			}
 			else{
-				$(document).load('http://' + addres + '/mode="ap"');
+				$(document).load('http://' + addres + '/mode=ap');
 			}
 			
 		}
@@ -68,7 +72,7 @@ $(document).ready(function(){
 				location.href = "http://"+ addres +"/index.html";
 			}
 			else{
-				$(document).load('http://' + addres + '/mode?mode="sta"');
+				$(document).load('http://' + addres + '/mode?mode=sta&ssid='+ ssid +'&pass='+ pass);
 			}
 		}
 		

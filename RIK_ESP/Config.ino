@@ -27,8 +27,8 @@ bool loadConfig() {
   //  строку возьмем из глобальной переменной String jsonConfig
     JsonObject& root = jsonBuffer.parseObject(jsonConfig);
   // Теперь можно получить значения из root  
-    //ssid = root["ssid"].as<String>(); // Так получаем строку
-    //password = root["password"].as<String>();
+    ssid = root["ssid"].as<String>(); // Так получаем строку
+    password = root["password"].as<String>();
     return true;
 }
 

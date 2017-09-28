@@ -1,11 +1,11 @@
 void HTTP_init(void) {
   HTTP.on("/forword", go_forword);     //едем вперед
-  HTTP.on("/left", go_left);     //едем вперед
-  HTTP.on("/right", go_right);     //едем вперед
-  HTTP.on("/reset", stopWheels);
-  HTTP.on("/back", go_back);
+  HTTP.on("/left", go_left);     //лево
+  HTTP.on("/right", go_right);     //право
+  HTTP.on("/reset", stopWheels); //остановка
+  HTTP.on("/back", go_back); //назад
   HTTP.on("/config", conf); //обработка конфигурации
-  HTTP.on("/mode", changeMode);
+  HTTP.on("/mode", changeMode); //смена режима работы сервера
   // Запускаем HTTP сервер
   HTTP.begin();
 
@@ -52,6 +52,18 @@ void conf()
 //режим подключения
 void changeMode()
 {
-  HTTP.send(200, "text/plain", stateOf); // AP/STA
+  ssid = HTTP.arg("ssid");
+  password = HTTP.arg("pass");
+  stateOf = HTTP.arg("mode");
+  saveConfig();
+  
+  if(stateOf == "STA"){
+    WiFi.disconnect();
+    WIFIinit();
+  }
+  if(stateOf == "AP"){
+      StartAPMode();
+  }
+  HTTP.send(200, "text/plain", "Bad"); // AP/STA
 }
 
