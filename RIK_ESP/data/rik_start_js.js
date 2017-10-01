@@ -67,11 +67,11 @@ $(document).ready(function(){
 	});
 	$('html').on("touchstart", "#lightON", function(){
 		if(light){
-			$(document).load('http://'+ addres +'/disabletorch');
+			$(document).load('http://'+ webcamAddres +'/disabletorch');
 			light = false;
 		}
 		else{
-			$(document).load('http://'+ addres +'/enabletorch');
+			$(document).load('http://'+ webcamAddres +'/enabletorch');
 			light = true;
 		}
 		return;
@@ -92,11 +92,11 @@ $(document).ready(function(){
 		 
 		if(event.keyCode == 70){
 			 if(light){
-				$(document).load('http://'+ addres +'/disabletorch');
+				$(document).load('http://'+ webcamAddres +'/disabletorch');
 				light = false;
 			 }
 			 else{
-				$(document).load('http://'+ addres +'/enabletorch');
+				$(document).load('http://'+ webcamAddres +'/enabletorch');
 				light = true;
 			 }
 		 }

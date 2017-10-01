@@ -59,20 +59,22 @@ $(document).ready(function(){
 		if(_mode == "STA")
 		{
 			if($("#client").is(":checked")){
-				location.href = "http://"+ addres +"/index.html";
+				location.href = "http://"+ addres +"/start.html";
 			}
 			else{
-				$(document).load('http://' + addres + '/mode=ap');
+				$(document).load('http://' + addres + '/mode?mode=AP');
 			}
 			
 		}
 		else if(_mode == "AP")
 		{
 			if($("#softAP").is(":checked")){
-				location.href = "http://"+ addres +"/index.html";
+				location.href = "http://"+ addres +"/start.html";
 			}
 			else{
-				$(document).load('http://' + addres + '/mode?mode=sta&ssid='+ ssid +'&pass='+ pass);
+				ssid = $("input[name='ssid']").val();
+				pass = $("input[name='password']").val();
+				$(document).load('http://' + addres + '/mode?mode=STA&ssid='+ ssid +'&pass='+ pass);
 			}
 		}
 		

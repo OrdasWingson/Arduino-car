@@ -3,8 +3,8 @@
 #include <FS.h>
 #include <ArduinoJson.h> 
 
-String ssid = "Amsterdam"; //Сеть по умолчанию
-String password = "scarletrose90"; //Пароль по умолчанию
+String ssid = "admin"; //Сеть по умолчанию
+String password = "1234"; //Пароль по умолчанию
 String jsonConfig = "{}";//Переменная для обработки файла конфигурации
 String stateOf ="AP"; //какой режим включен
 
@@ -22,7 +22,10 @@ void setup() {
    loadConfig();
   //Serial.println("Start 1-WIFI");
    //Запускаем WIFI
-  WIFIinit();
+   if(stateOf == "STA")
+      WIFIinit();
+   else
+      StartAPMode();
     //Настраиваем и запускаем SSDP интерфейс
   //Serial.println("Start 2-WebServer");
   HTTP_init();

@@ -52,18 +52,24 @@ void conf()
 //режим подключения
 void changeMode()
 {
-  ssid = HTTP.arg("ssid");
-  password = HTTP.arg("pass");
   stateOf = HTTP.arg("mode");
-  saveConfig();
+  Serial.println("mode - " + stateOf); 
   
   if(stateOf == "STA"){
+    ssid = HTTP.arg("ssid");
+    //Serial.println("ssid - " + ssid);
+    password = HTTP.arg("pass");
+    //Serial.println("password - " + password);
     WiFi.disconnect();
+    //Serial.println("DISCONECT");
     WIFIinit();
   }
   if(stateOf == "AP"){
-      StartAPMode();
+    Serial.println("AP START");
+     StartAPMode();
   }
-  HTTP.send(200, "text/plain", "Bad"); // AP/STA
+   HTTP.send(200, "text/plain", "OK"); // AP/STA
+  saveConfig();
+ 
 }
 

@@ -26,7 +26,7 @@ void WIFIinit() {
     Serial.println("WiFi connected");
     Serial.println("IP address: ");
     Serial.println(WiFi.localIP());
-    stateOf="STA(КЛИЕНТ)";
+    stateOf="STA";
   }
 }
 
@@ -43,6 +43,6 @@ bool StartAPMode()
   WiFi.softAP("RIK");
   Serial.println("softAP is start");
   Serial.println(WiFi.softAPIP());
-  stateOf="AP(ТОЧКА ДОСТУПА)";
+  stateOf="AP";
   return true;
 }

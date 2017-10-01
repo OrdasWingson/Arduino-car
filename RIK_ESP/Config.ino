@@ -34,6 +34,12 @@ bool loadConfig() {
 
 // Запись данных в файл config.json
 bool saveConfig() {
+  //для избежания дублежа записи
+  if(SPIFFS.exists("/config.json"))
+  {
+    SPIFFS.remove("/config.json");
+  }
+  
   // Резервируем память для json обекта буфер может рости по мере необходимти предпочтительно для ESP8266 
   DynamicJsonBuffer jsonBuffer;
   //  вызовите парсер JSON через экземпляр jsonBuffer
@@ -42,7 +48,9 @@ bool saveConfig() {
   json["ssid"] = ssid;
   json["password"] = password;
   json["state"] = stateOf;
-  // Помещаем созданный json в глобальную переменную json.printTo(jsonConfig);
+  // Помещаем созданный json в глобальную переменную json.printTo(jsonConfig)
+  //очищая ее перед этим;
+  jsonConfig = "";
   json.printTo(jsonConfig);
   // Открываем файл для записи
   File configFile = SPIFFS.open("/config.json", "w");
