@@ -33,7 +33,7 @@ $(document).ready(function(){
 	}
 	
 	$("#setting").click(function(){
-		location.href = "http://"+ addres +"/rik_menu.html";
+		location.href = "http://"+ addres +"/rik_setting.html";
 	});
 	
 	

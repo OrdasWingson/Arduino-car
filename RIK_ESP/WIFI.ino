@@ -40,7 +40,7 @@ bool StartAPMode()
   // Включаем WIFI в режиме точки доступа с именем и паролем
   // хронящихся в переменных _ssidAP _passwordAP
   //WiFi.softAP(_ssidAP.c_str(), _passwordAP.c_str());
-  WiFi.softAP("RIK "+WiFi.softAPIP());
+  WiFi.softAP("RIK");
   Serial.println("softAP is start");
   Serial.println(WiFi.softAPIP());
   stateOf="AP";
