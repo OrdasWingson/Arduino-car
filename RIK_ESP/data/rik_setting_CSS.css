@@ -22,6 +22,26 @@ body{
 	background: #C5BEBE;
 }
 
+#mode{
+	font-size: 25px;
+	color: #c51414;
+	text-align: center;
+}
+
+
+#spanNON{
+	color: #c51414;
+	font-size: 18px;
+	text-align: center;
+}
+
+#back{
+	font-size: 20px;
+	color: white;
+	font-family: 'Verdana';
+	font-weight: 200; 
+}
+
 .flex-container{
  display: flex;
  flex-direction: column;
@@ -130,7 +150,7 @@ body{
 	cursor: pointer;
 	display: block;
 	float: left;
-	width: 150px;
+	width: 200px;
 	height: 45px;
 	line-height: 45px;
 	position: relative;

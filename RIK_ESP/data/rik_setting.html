@@ -11,11 +11,13 @@
 			<div class="flex-block head">
 				<span>Система управления RIK-3</span>
 			</div>
-			<nav></nav>
+			<nav>
+				
+			</nav>
 			<div class="flax-centr">
-				<div class="flex-block status">
-					<p>На данный момент модуль Wi-Fi запущен как</p>
-					<span id="mode"></span>
+				<div class="flex-block" id="status">
+					<div id="spanNON">На данный момент модуль Wi-Fi запущен как</div>
+					<div id="mode">404</div>
 				</div>
 				
 				<div class="flex-block">
@@ -25,8 +27,8 @@
 						<input id="client" type="radio" name="tab" checked="checked" />
 						<input id="softAP" type="radio" name="tab" />
 						
-						<label for="client" id="client_l1">Клиент</label>
-						<label for="softAP" id="softAP_l2">Точка доступа</label>
+						<label for="client" id="client_l1">Клиент(STA)</label>
+						<label for="softAP" id="softAP_l2">Точка доступа(AP)</label>
 						<div style="clear:both"></div>
 
 						<div class="tabs_cont">
@@ -44,7 +46,9 @@
 								</span>		
 							</div>
 							<div id="softAP_c2">
-								Content of first second
+								Режим точки доступа позволяет управлять машинкой вне домашней сет.
+								При включении этого режима нужно будет подключиться к сети Wi-Fi
+								с иминем RIK и перейти по адресу 192.168.4.1.								
 							</div>
 						</div>
 					</section>

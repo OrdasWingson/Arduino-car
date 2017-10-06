@@ -43,7 +43,7 @@ $(document).ready(function(){
 		if(_mode == "STA")
 		{
 			if($("#client").is(":checked")){
-				location.href = "http://"+ addres +"/start.html";
+				location.href = "http://"+ addres +"/rik_screen.html";
 			}
 			else{
 				$(document).load('http://' + addres + '/mode?mode=AP');
@@ -53,7 +53,7 @@ $(document).ready(function(){
 		else if(_mode == "AP")
 		{
 			if($("#softAP").is(":checked")){
-				location.href = "http://"+ addres +"/start.html";
+				location.href = "http://"+ addres +"/rik_screen.html";
 			}
 			else{
 				ssid = $("input[name='ssid']").val();
