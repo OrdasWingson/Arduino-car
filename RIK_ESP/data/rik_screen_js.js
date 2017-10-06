@@ -32,6 +32,12 @@ $(document).ready(function(){
 		}
 	}
 	
+	$("#setting").click(function(){
+		location.href = "http://"+ addres +"/rik_menu.html";
+	});
+	
+	
+	
 	//функция подключения камеры
 	$("#agreeIP").click(function(){
 		webcamAddres = $("#inputAddres").val();

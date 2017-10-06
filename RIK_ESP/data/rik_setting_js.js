@@ -37,22 +37,6 @@ $(document).ready(function(){
         });
 	});
 	
-
-	$("#blockAP").css('visibility','hidden').css('position', 'absolute');
-	//обработка события выбора режима
-	
-	$("input[name=dzen]").click(function() {
-		if($("#client").is(":checked"))
-		{
-			$("#blockAP").css('visibility','hidden').css('position', 'absolute');
-			$("#clientPoint").css('visibility','visible').css('position', 'relative');			
-		}
-		else if($("#softAP").is(":checked"))
-		{
-			$("#clientPoint").css('visibility','hidden').css('position', 'absolute');
-			$("#blockAP").css('visibility','visible').css('position', 'relative');
-		}
-	});
 	
 	//нажатие кнопки запуск
 	$("#startBTN").click(function() {
@@ -76,8 +60,7 @@ $(document).ready(function(){
 				pass = $("input[name='password']").val();
 				$(document).load('http://' + addres + '/mode?mode=STA&ssid='+ ssid +'&pass='+ pass);
 			}
-		}
-		
+		}			
 	});
 
 	

@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="rik_setting_CSS.css">
+		<title>RIK-3</title>		
+		<script src="jquery-3.2.1.min.js"></script>	
+		<script src="rik_setting_js.js"></script>
+	</head>
+	<body>
+		<div class="flex-container">
+			<div class="flex-block head">
+				<span>Система управления RIK-3</span>
+			</div>
+			<nav></nav>
+			<div class="flax-centr">
+				<div class="flex-block status">
+					<p>На данный момент модуль Wi-Fi запущен как</p>
+					<span id="mode"></span>
+				</div>
+				
+				<div class="flex-block">
+					<p>Выбирете тип подключения.<br></p>
+					
+					<section class="tabs">
+						<input id="client" type="radio" name="tab" checked="checked" />
+						<input id="softAP" type="radio" name="tab" />
+						
+						<label for="client" id="client_l1">Клиент</label>
+						<label for="softAP" id="softAP_l2">Точка доступа</label>
+						<div style="clear:both"></div>
+
+						<div class="tabs_cont">
+							<div id="client_c1">
+								<p>
+									Подключение к домашней сети<br>
+								</p>
+								<div style="clear:both;"></div>
+								<span>	Введите имя сети:
+									<input type="text" maxlength="16" name="ssid" value="">
+								</span>	
+								<br>
+								<span>	Введите пароль:
+									<input type="text" maxlength="16" name="password" value="">
+								</span>		
+							</div>
+							<div id="softAP_c2">
+								Content of first second
+							</div>
+						</div>
+					</section>
+					<div style="clear:both;"></div>
+					<div id="startBTN"><span>ЗАПУСК</span></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
