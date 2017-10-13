@@ -4,7 +4,7 @@
 int rxPin = 2;
 int txPin = 3;
 
-String stringLed = ""; //для тестов
+String command = ""; //переменная ответа com-порта
 
 char com;
 
@@ -17,30 +17,16 @@ int EN1 = 9;
 int EN2 = 10; 
 SoftwareSerial mySerial(rxPin, txPin);
 
-void setup() {
-
-  pinMode(EN1, OUTPUT);
-  pinMode(EN2, OUTPUT);
-  pinMode(IN1, OUTPUT);
-  pinMode(IN2, OUTPUT);
-  pinMode(IN3, OUTPUT);
-  pinMode(IN4, OUTPUT);
-  pinMode(rxPin, INPUT);
-  pinMode(txPin, OUTPUT);
-  mySerial.begin(9600);
-  Serial.begin(115200);
-}
 
 //функция очистки буфера
 void clearBuff(){
   while (mySerial.available()) mySerial.read();
-  stringLed="";
+  com = '0';
 }
 
 
 //функция сигнала
-void drivers(int enA, int enB, int in1, int in2,int in3, int in4)
-{
+void drivers(int enA=0, int enB=0, int in1=0, int in2=0,int in3=0, int in4=0){
       analogWrite (EN1, enA);
       analogWrite (EN2, enB);
       digitalWrite(IN1, in1);   
@@ -51,43 +37,54 @@ void drivers(int enA, int enB, int in1, int in2,int in3, int in4)
 }
 
 
+
+void setup() {
+  pinMode(EN1, OUTPUT);
+  pinMode(EN2, OUTPUT);
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
+  pinMode(rxPin, INPUT);
+  pinMode(txPin, OUTPUT);
+  mySerial.begin(9600);
+  Serial.begin(9600);
+}
+
+
 void loop() {  
     
 
  //функция чтения сериал
   if (mySerial.available()>0){
-     char c = mySerial.read();
-     stringLed += c;
-    com = mySerial.read();   
-    Serial.print("===");
-    Serial.println(c);
-    Serial.println("->"+stringLed);
+    com = mySerial.read();
+    Serial.println(com);
     
   } 
   
   
-    if( stringLed == "1") //движение вперед
+    if( com == '1') //движение вперед
     {
-      drivers(200,200,1,0,0,1);
+      drivers(180,180,1,0,0,1);
     }
 
-    if( stringLed == "3") //поворот - лево
+    if( com == '3') //поворот - лево
     {
-      drivers(140,0,0,1,0,1);
+      drivers(120,120,1,0,1,0);
     }
-    if( stringLed == "2")//поворот - право
+    if( com == '2')//поворот - право
     {
-      drivers(0,140,1,0,1,0);
+      drivers(120,120,0,1,0,1);
     }
 
-    if( stringLed == "4") // остановка
+    if( com == '4') // остановка
     {
       drivers(0,0,0,0,0,0);
     }
 
-     if( stringLed == "5") // назад
+     if( com == '5') // назад
     {
-      drivers(130,130,0,1,1,0);
+      drivers(150,150,0,1,1,0);
     }
 
    
