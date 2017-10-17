@@ -15,19 +15,12 @@ File fsUploadFile;
 
 void setup() {
   Serial.begin(9600);
- // Serial.println("");
-  //Запускаем файловую систему 
-  //Serial.println("Start 4-FS");
    FS_init();
    loadConfig();
-  //Serial.println("Start 1-WIFI");
-   //Запускаем WIFI
    if(stateOf == "STA")
       WIFIinit();
    else
       StartAPMode();
-    //Настраиваем и запускаем SSDP интерфейс
-  //Serial.println("Start 2-WebServer");
   HTTP_init();
 
 }

@@ -47,21 +47,5 @@ bool handleFileRead(String path) {
   return false;
 }
 
-void handleFileUpload() {
-  if (HTTP.uri() != "/edit") return;
-  HTTPUpload& upload = HTTP.upload();
-  if (upload.status == UPLOAD_FILE_START) {
-    String filename = upload.filename;
-    if (!filename.startsWith("/")) filename = "/" + filename;
-    fsUploadFile = SPIFFS.open(filename, "w");
-    filename = String();
-  } else if (upload.status == UPLOAD_FILE_WRITE) {
-    //DBG_OUTPUT_PORT.print("handleFileUpload Data: "); DBG_OUTPUT_PORT.println(upload.currentSize);
-    if (fsUploadFile)
-      fsUploadFile.write(upload.buf, upload.currentSize);
-  } else if (upload.status == UPLOAD_FILE_END) {
-    if (fsUploadFile)
-      fsUploadFile.close();
-  }
-}
+
 
