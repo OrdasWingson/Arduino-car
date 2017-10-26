@@ -29,6 +29,7 @@ bool loadConfig() {
   // Теперь можно получить значения из root  
     ssid = root["ssid"].as<String>(); // Так получаем строку
     password = root["password"].as<String>();
+    stateOf = root["state"].as<String>();
     return true;
 }
 

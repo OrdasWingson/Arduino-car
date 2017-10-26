@@ -68,12 +68,18 @@ nav div span{
 }
 	
 .buttonRIK{
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none; 
 	visibility: hidden;
 	width: 0px;
 	height: 0px;
 }
 
 #lightON{
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none; 
 	visibility: hidden;
 	width: 0px;
 	height: 0px;

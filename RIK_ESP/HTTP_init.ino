@@ -61,7 +61,7 @@ void changeMode()
     password = HTTP.arg("pass");
     //Serial.println("password - " + password);
     WiFi.disconnect();
-    //Serial.println("DISCONECT");
+    Serial.println("DISCONECT");
     WIFIinit();
   }
   if(stateOf == "AP"){

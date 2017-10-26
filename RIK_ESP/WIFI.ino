@@ -22,10 +22,11 @@ void WIFIinit() {
   else {
     // Иначе удалось подключиться отправляем сообщение
     // о подключении и выводим адрес IP
+     
     Serial.println("");
     Serial.println("WiFi connected");
     Serial.println("IP address: ");
-    Serial.println(WiFi.localIP());
+    //Serial.println(WiFi.localIP());//для отлпдки
     stateOf="STA";
   }
 }
@@ -42,7 +43,7 @@ bool StartAPMode()
   //WiFi.softAP(_ssidAP.c_str(), _passwordAP.c_str());
   WiFi.softAP("RIK");
   Serial.println("softAP is start");
-  Serial.println(WiFi.softAPIP());
+  //Serial.println(WiFi.softAPIP());
   stateOf="AP";
   return true;
 }
